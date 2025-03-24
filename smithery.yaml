@@ -1,0 +1,26 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      docstring:
+        type: string
+        description: Optional override for the Coze workflow tool's documentation
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      const args = [];
+      if(config.docstring){
+        args.push('--docstring', config.docstring);
+      }
+      return { command: 'python', args: ['coze_workflow.py', ...args] };
+    }
+  exampleConfig:
+    docstring: |-
+      运行指定的 Coze 工作流
+
+      该工具允许你调用 Coze 平台上的工作流并获取执行结果。
