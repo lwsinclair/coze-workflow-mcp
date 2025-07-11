@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/sdaaron-coze-workflow-mcp-badge.png)](https://mseep.ai/app/sdaaron-coze-workflow-mcp)
+
 ## 在 claude 客户端上安装此 MCP Server
 
 打开 Claude 配置文件
